@@ -1,0 +1,11 @@
+.gradle/
+.kotlin/
+build/
+**/build/
+*.iml
+.idea/
+local.properties
+*.apk
+!app/src/main/assets/quickstep/BB10QuickstepOverlay.apk
+*.jks
+*.keystore

@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.compose'
+}
+
+android {
+    namespace 'com.bb10.launcher'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.bb10.launcher'
+        minSdk 30
+        targetSdk 34
+        versionCode 60
+        versionName '0.6'
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { outputFileName = "JL10v${variant.versionName}.apk" }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures {
+        compose true
+    }
+    packaging {
+        resources {
+            pickFirsts += ['META-INF/NOTICE.md', 'META-INF/LICENSE.md', 'META-INF/NOTICE.txt', 'META-INF/LICENSE.txt']
+        }
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+
+tasks.named('preBuild') { dependsOn ':overlay:copyOverlayToLauncher' }
+
+dependencies {
+    implementation 'org.lsposed.hiddenapibypass:hiddenapibypass:6.1'
+    compileOnly project(':xposed-stubs')
+    implementation project(':bbui')
+    implementation project(':bbkit')
+    implementation 'com.sun.mail:android-mail:1.6.7'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.sun.mail:android-activation:1.6.7'
+}

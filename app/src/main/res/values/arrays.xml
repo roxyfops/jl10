@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="grid_sizes">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="frame_counts">
+        <item>Unlimited</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>12</item>
+    </string-array>
+    <string-array name="frame_count_values">
+        <item>0</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>12</item>
+    </string-array>
+    <string-array name="edge_sizes">
+        <item>20</item>
+        <item>24</item>
+        <item>32</item>
+    </string-array>
+    <string-array name="shape_names">
+        <item>System default</item>
+        <item>BB10 rounded square</item>
+        <item>Square</item>
+    </string-array>
+    <string-array name="shape_values">
+        <item>system</item>
+        <item>rounded</item>
+        <item>square</item>
+    </string-array>
+
+    <string-array name="hub_theme_names">
+        <item>Bright (BB10 10.3)</item>
+        <item>Dark</item>
+    </string-array>
+    <string-array name="hub_theme_values">
+        <item>bright</item>
+        <item>dark</item>
+    </string-array>
+    <string-array name="recents_action_names">
+        <item>Open BB10 search</item>
+        <item>Switch to the last app</item>
+        <item>Not used (left to Android)</item>
+    </string-array>
+    <string-array name="recents_action_values">
+        <item>search</item>
+        <item>last_app</item>
+        <item>none</item>
+    </string-array>
+    <string-array name="lock_timeout_names">
+        <item>10 seconds (default)</item>
+        <item>5 seconds</item>
+        <item>15 seconds</item>
+        <item>30 seconds</item>
+        <item>1 minute</item>
+        <item>2 minutes</item>
+        <item>The phone\'s screen timeout</item>
+    </string-array>
+    <string-array name="lock_timeout_values">
+        <item>default</item>
+        <item>5000</item>
+        <item>15000</item>
+        <item>30000</item>
+        <item>60000</item>
+        <item>120000</item>
+        <item>screen</item>
+    </string-array>
+
+    <string-array name="xposed_scope">
+        <item>com.android.systemui</item>
+    </string-array>
+    <string-array name="wall_dim_names">
+        <item>Off</item><item>10%</item><item>20%</item><item>30%</item><item>40%</item><item>50%</item><item>60%</item><item>70%</item>
+    </string-array>
+    <string-array name="wall_dim_values">
+        <item>0</item><item>10</item><item>20</item><item>30</item><item>40</item><item>50</item><item>60</item><item>70</item>
+    </string-array>
+    <string-array name="home_text_names">
+        <item>Light (for dark wallpapers)</item><item>Dark (for light wallpapers)</item><item>Automatic, from the wallpaper</item>
+    </string-array>
+    <string-array name="home_text_values">
+        <item>light</item><item>dark</item><item>auto</item>
+    </string-array>
+    <string-array name="lock_column_names">
+        <item>Centred top to bottom</item><item>From the top</item>
+    </string-array>
+    <string-array name="lock_column_values">
+        <item>center</item><item>top</item>
+    </string-array>
+</resources>

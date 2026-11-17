@@ -1,0 +1,35 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.bb10.launcher.overlay.quickstep'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.bb10.launcher.overlay.quickstep'
+        minSdk 30
+        targetSdk 34
+        versionCode 1
+        versionName '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+
+tasks.register('copyOverlayToLauncher', Copy) {
+    dependsOn 'assembleRelease'
+    from layout.buildDirectory.file('outputs/apk/release/overlay-release.apk')
+    into rootProject.file('app/src/main/assets/quickstep')
+    rename { 'BB10QuickstepOverlay.apk' }
+}

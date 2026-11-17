@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceScreen
+        android:key="setup_screen"
+        android:icon="@drawable/set_setup"
+        android:title="Setup">
+        <Preference
+            android:key="setup_wizard"
+            android:title="Guided setup"
+            android:summary="Sets up everything in one go, step by step" />
+        <Preference
+            android:key="root_setup"
+            android:title="Set everything up with root"
+            android:summary="Grants the access below in one go" />
+        <PreferenceCategory android:title="Status">
+            <Preference android:key="perm_notif" android:title="Notification access" />
+            <Preference android:key="perm_a11y" android:title="Accessibility service" />
+            <Preference android:key="perm_usage" android:title="Usage access" />
+            <Preference android:key="set_default" android:title="Default home screen" />
+            <Preference android:key="nav_buttons" android:title="Disable Android's gestures, use buttons (Recommended)" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="More">
+            <Preference
+                android:key="goto_system"
+                android:title="Root &amp; system modules"
+                android:summary="QuickStep and System UI modules" />
+        </PreferenceCategory>
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:icon="@drawable/set_home"
+        android:title="Home Screen"
+        android:summary="Theme, grid, icons, wallpaper, font">
+        <ListPreference
+            android:key="hub_theme"
+            android:title="Theme"
+            android:summary="%s"
+            android:defaultValue="bright"
+            android:entries="@array/hub_theme_names"
+            android:entryValues="@array/hub_theme_values" />
+        <PreferenceCategory android:title="Grid">
+            <ListPreference
+                android:key="grid_cols"
+                android:title="Columns"
+                android:summary="%s"
+                android:defaultValue="5"
+                android:entries="@array/grid_sizes"
+                android:entryValues="@array/grid_sizes" />
+            <ListPreference
+                android:key="grid_rows"
+                android:title="Rows"
+                android:summary="%s"
+                android:defaultValue="3"
+                android:entries="@array/grid_sizes"
+                android:entryValues="@array/grid_sizes" />
+            <SwitchPreference android:key="show_labels" android:title="App names" android:defaultValue="true" />
+            <MultiSelectListPreference android:key="hidden_apps" android:title="Hidden apps" android:summary="Search “private” to find them" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="Icons">
+            <SwitchPreference
+                android:key="bb10_icons"
+                android:title="BlackBerry 10 icons"
+                android:summary="Where there's a match"
+                android:defaultValue="true" />
+            <ListPreference
+                android:key="icon_pack"
+                android:title="Icon pack"
+                android:summary="%s"
+                android:defaultValue="" />
+            <ListPreference
+                android:key="icon_shape"
+                android:title="Icon shape"
+                android:summary="%s"
+                android:defaultValue="rounded"
+                android:entries="@array/shape_names"
+                android:entryValues="@array/shape_values" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="Wallpaper">
+            <Preference android:key="wallpaper" android:title="Wallpaper" android:summary="Home and lock screens" />
+            <ListPreference
+                android:key="wall_dim"
+                android:title="Darken wallpaper"
+                android:summary="%s"
+                android:defaultValue="0"
+                android:entries="@array/wall_dim_names"
+                android:entryValues="@array/wall_dim_values" />
+            <ListPreference
+                android:key="home_text"
+                android:title="Text and icons"
+                android:summary="%s"
+                android:defaultValue="light"
+                android:entries="@array/home_text_names"
+                android:entryValues="@array/home_text_values" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="Font">
+            <Preference android:key="font_pick" android:title="Custom font" />
+            <Preference android:key="font_reset" android:title="Use Slate Pro" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="Reset">
+            <Preference android:key="reset_layout" android:title="Reset layout" android:summary="No folders, A–Z" />
+        </PreferenceCategory>
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:icon="@drawable/set_frames"
+        android:title="Active Frames"
+        android:summary="Live frames, messages, animations">
+        <SwitchPreference
+            android:key="frames_arrange"
+            android:title="Rearrange frames"
+            android:summary="Hold to move. Off: most recent first"
+            android:defaultValue="false" />
+        <SwitchPreference
+            android:key="frames_live"
+            android:title="Live frames"
+            android:summary="Music, calendar, alarms, downloads"
+            android:defaultValue="true" />
+        <SwitchPreference
+            android:key="frames_messages"
+            android:title="New messages"
+            android:summary="Sender and message in the frame"
+            android:defaultValue="true" />
+        <SwitchPreference
+            android:key="frames_thumbnails"
+            android:title="Snapshots"
+            android:defaultValue="true" />
+        <SwitchPreference
+            android:key="frames_launch"
+            android:title="Open apps from a frame"
+            android:defaultValue="true" />
+        <SwitchPreference
+            android:key="own_splash"
+            android:title="JL10 splash screen"
+            android:defaultValue="false" />
+        <SwitchPreference
+            android:key="own_splash_skip_quick"
+            android:title="Skip it for quick apps"
+            android:defaultValue="false" />
+        <SwitchPreference
+            android:key="frames_minimize_anim"
+            android:title="Minimise into a frame"
+            android:defaultValue="true" />
+        <ListPreference
+            android:key="frames_max"
+            android:title="Maximum frames"
+            android:summary="%s"
+            android:defaultValue="0"
+            android:entries="@array/frame_counts"
+            android:entryValues="@array/frame_count_values" />
+        <SwitchPreference
+            android:key="frames_kill"
+            android:title="Force-stop when closing"
+            android:summary="Some apps dislike it"
+            android:defaultValue="false" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:icon="@drawable/set_hub"
+        android:title="BlackBerry Hub"
+        android:summary="Instant Previews, what goes in">
+        <SwitchPreference
+            android:key="instant_previews"
+            android:title="Instant Previews"
+            android:summary="Replaces Android's pop-ups"
+            android:defaultValue="false" />
+        <SwitchPreference
+            android:key="hub_all"
+            android:title="All notifications"
+            android:summary="Also system ones"
+            android:defaultValue="true" />
+        <SwitchPreference
+            android:key="hub_keep_history"
+            android:title="Keep messages"
+            android:summary="Until you delete them"
+            android:defaultValue="true" />
+        <MultiSelectListPreference android:key="hub_excluded" android:title="Excluded apps" />
+        <Preference android:key="hub_clear" android:title="Clear history" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:icon="@drawable/set_statusbar"
+        android:title="Status Bar &amp; Quick Settings"
+        android:summary="Status bar, Quick Settings, volume">
+        <PreferenceCategory android:title="Status bar">
+            <SwitchPreference
+                android:key="bb_status_bar"
+                android:title="On the home screen"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="sysui_statusbar"
+                android:title="In every app"
+                android:summary="Needs the System UI module"
+                android:defaultValue="false" />
+            <SwitchPreference android:key="clock_24h" android:title="24-hour clock" android:defaultValue="false" />
+            <SwitchPreference android:key="clock_seconds" android:title="Show seconds" android:defaultValue="false" />
+            <SwitchPreference android:key="battery_percent" android:title="Battery percentage" android:summary="Beside the battery icon (the lock screen always shows it)" android:defaultValue="false" />
+            <SwitchPreference android:key="sb_notif_icons" android:title="Notification icons" android:summary="Icons of apps with unread notifications. Off: never shown, anywhere" android:defaultValue="true" />
+            <SwitchPreference android:key="bb_status_logo" android:title="BlackBerry logo" android:defaultValue="true" />
+            <SwitchPreference android:key="bb_status_carrier" android:title="Carrier name" android:defaultValue="true" />
+            <SwitchPreference
+                android:key="alarm_icon"
+                android:title="Alarm icon"
+                android:summary="The alarm clock next to the battery while an alarm is set"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="net_speed"
+                android:title="Network speed"
+                android:summary="Upload and download speed, next to the network icons"
+                android:defaultValue="false" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="Quick Settings">
+            <SwitchPreference
+                android:key="pull_android_panel"
+                android:title="Use Android's notification panel"
+                android:summary="Swiping down from the status bar opens Android's own notifications instead of BB10 Quick Settings. The BB10 status bar stays"
+                android:disableDependentsState="true"
+                android:defaultValue="false" />
+            <SwitchPreference
+                android:key="sysui_shade"
+                android:dependency="pull_android_panel"
+                android:title="Replace the notification shade"
+                android:summary="Needs the System UI module"
+                android:defaultValue="false" />
+            <Preference
+                android:key="qs_edit"
+                android:title="Toggles"
+                android:summary="Choose and order">
+                <intent android:targetPackage="com.bb10.launcher" android:targetClass="com.bb10.launcher.settings.QsEditActivity" />
+            </Preference>
+            <SwitchPreference android:key="qs_brightness" android:title="Brightness slider" android:defaultValue="true" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="Volume">
+            <SwitchPreference
+                android:key="sysui_volume"
+                android:title="BB10 volume controls"
+                android:summary="Needs the System UI module"
+                android:defaultValue="false" />
+        </PreferenceCategory>
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:icon="@drawable/set_lock"
+        android:title="Lock Screen"
+        android:summary="BB10 lock screen">
+        <SwitchPreference
+            android:key="sysui_keyguard"
+            android:title="BB10 lock screen"
+            android:summary="Needs the System UI module. Android still checks your password"
+            android:defaultValue="false" />
+        <EditTextPreference
+            android:key="pw_auto_length"
+            android:dependency="sysui_keyguard"
+            android:title="Unlock without Enter"
+            android:summary="Your password's length (0 = off). A wrong number fails every try"
+            android:inputType="number"
+            android:defaultValue="0" />
+        <SwitchPreference
+            android:key="lock_music_tint"
+            android:dependency="sysui_keyguard"
+            android:title="Music bar colour from album art"
+            android:defaultValue="true" />
+        <SwitchPreference
+            android:key="lock_camera"
+            android:title="Camera button"
+            android:summary="Bottom right of the lock screen"
+            android:defaultValue="true" />
+        <ListPreference
+            android:key="lock_column"
+            android:dependency="sysui_keyguard"
+            android:title="Unread apps column"
+            android:summary="%s"
+            android:defaultValue="center"
+            android:entries="@array/lock_column_names"
+            android:entryValues="@array/lock_column_values" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:icon="@drawable/set_gestures"
+        android:title="Gestures &amp; Keyboard"
+        android:summary="Gestures, Type &amp; Go, shortcuts">
+        <PreferenceCategory android:title="Buttons">
+            <ListPreference
+                android:key="recents_action"
+                android:title="Recents button"
+                android:summary="%s"
+                android:defaultValue="search"
+                android:entries="@array/recents_action_names"
+                android:entryValues="@array/recents_action_values" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="Gestures">
+            <SwitchPreference
+                android:key="gestures_enabled"
+                android:title="BB10 gestures in every app"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="gesture_home"
+                android:dependency="gestures_enabled"
+                android:title="Swipe up to minimise"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="gesture_peek"
+                android:dependency="gestures_enabled"
+                android:title="Up and right to peek at the Hub"
+                android:defaultValue="true" />
+            <ListPreference
+                android:key="gesture_edge"
+                android:dependency="gestures_enabled"
+                android:title="Bottom edge height"
+                android:summary="%s dp"
+                android:defaultValue="20"
+                android:entries="@array/edge_sizes"
+                android:entryValues="@array/edge_sizes" />
+            <SwitchPreference
+                android:key="gesture_haptic"
+                android:dependency="gestures_enabled"
+                android:title="Vibrate"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="gesture_handle"
+                android:dependency="gestures_enabled"
+                android:title="Show edge handle"
+                android:defaultValue="false" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="Keyboard">
+            <SwitchPreference
+                android:key="kb_type_search"
+                android:title="Type &amp; Go"
+                android:summary="Type on the home screen to search"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="kb_shortcuts"
+                android:title="Hold a letter to open an app"
+                android:summary="Assign in edit mode"
+                android:defaultValue="true" />
+        </PreferenceCategory>
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:key="system_screen"
+        android:icon="@drawable/set_system"
+        android:title="System"
+        android:summary="QuickStep, System UI module">
+        <PreferenceCategory android:title="Open / close animations (QuickStep)">
+            <Preference android:key="qs_status" android:title="Status" />
+            <Preference
+                android:key="qs_install"
+                android:title="Install QuickStep module"
+                android:summary="Needs root. Reboot afterwards" />
+            <Preference
+                android:key="qs_remove"
+                android:title="Remove QuickStep module" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="System UI module (LSPosed)">
+            <Preference android:key="sysui_status" android:title="Status" />
+            <Preference
+                android:key="sysui_restart"
+                android:title="Restart System UI"
+                android:summary="After turning the module on or updating" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="Troubleshooting">
+            <SwitchPreference
+                android:key="debug_mode"
+                android:title="Debug mode"
+                android:summary="Detailed logs for Diagnostics (animation timings, unlock steps, key timing). Off: only start-up and errors are logged"
+                android:defaultValue="false" />
+        </PreferenceCategory>
+    </PreferenceScreen>
+
+    <Preference
+        android:key="qs_diag"
+        android:icon="@drawable/set_diag"
+        android:title="Diagnostics"
+        android:summary="Report to copy and send" />
+</PreferenceScreen>
